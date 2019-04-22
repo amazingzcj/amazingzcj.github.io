@@ -692,7 +692,7 @@ article a {
 
 article a:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #1D62F0;
     text-decoration: underline;
 }
 
@@ -893,9 +893,10 @@ article .article-tags .chip {
     color: #525f7f;
 }
 
+/* 文章分类标签 */
 #artDetail .post-info .post-category:hover {
     font-weight: bold;
-    color: #42b983;
+    color: #1890ff;
     text-decoration: underline;
 }
 
@@ -1099,10 +1100,11 @@ table tr:nth-child(2n), thead {
     cursor: pointer;
     box-shadow: 0 3px 5px rgba(0, 0, 0, .12);
 }
-
+/* 文章分类标签 */
 .chip-container .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
+    /* background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important; */
+    background: linear-gradient(to right, #399fff 0%, #399fff 100%) !important;
 }
 
 .chip .tag-length {
@@ -1394,9 +1396,10 @@ table tr:nth-child(2n), thead {
     text-decoration: underline;
 }
 
-.post-statis .statis .count a {
+/* 关于 页面数量 */
+/* .post-statis .statis .count a {
     color: #42b983;
-}
+} */
 
 .post-statis .statis .name {
     font-size: 0.9rem;
@@ -1407,7 +1410,7 @@ table tr:nth-child(2n), thead {
     margin: 0.5rem 0;
     text-align: center;
 }
-
+/* 关于页面图标*/
 #aboutme .social-link a {
     display: inline-block;
     width: 2.3rem;
@@ -1416,8 +1419,9 @@ table tr:nth-child(2n), thead {
     margin: 0 0.5rem;
     padding: 0;
     color: #fff;
-    border: 1px solid #0f9d58;
-    background: radial-gradient(#4cbf30, #0f9d58);;
+    border: 1px solid #2998ff;
+    /* background: radial-gradient(#4cbf30, #0f9d58); */
+    background: radial-gradient(rgb(68, 152, 248), #2998ff);
     font-size: 0.9rem;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(50, 50, 93, .21), 0 2px 3px rgba(0, 0, 0, .1);
