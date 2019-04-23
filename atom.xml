@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>amazingzcj</title>
   
-  <subtitle>Be amazing with ZCJ together.</subtitle>
+  <subtitle>Be amazing with ZCJ.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://amazingzcj.github.io/"/>
-  <updated>2019-04-17T23:21:50.126Z</updated>
+  <updated>2019-04-23T13:52:57.040Z</updated>
   <id>https://amazingzcj.github.io/</id>
   
   <author>
@@ -17,74 +17,30 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test5</title>
-    <link href="https://amazingzcj.github.io/test5.html"/>
-    <id>https://amazingzcj.github.io/test5.html</id>
-    <published>2019-04-17T23:21:50.000Z</published>
-    <updated>2019-04-17T23:21:50.126Z</updated>
+    <title>如何管理你的NPM?</title>
+    <link href="https://amazingzcj.github.io/ru-he-guan-li-ni-de-npm.html"/>
+    <id>https://amazingzcj.github.io/ru-he-guan-li-ni-de-npm.html</id>
+    <published>2019-04-23T12:37:47.000Z</published>
+    <updated>2019-04-23T13:52:57.040Z</updated>
     
     <summary type="html">
     
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test4</title>
-    <link href="https://amazingzcj.github.io/test4.html"/>
-    <id>https://amazingzcj.github.io/test4.html</id>
-    <published>2019-04-17T13:53:16.000Z</published>
-    <updated>2019-04-17T13:53:16.851Z</updated>
-    
-    <summary type="html">
+      
+      
+        
+        
+          &lt;h2 id=&quot;利用-nrm-一键管理-NPM&quot;&gt;&lt;a href=&quot;#利用-nrm-一键管理-NPM&quot; class=&quot;headerlink&quot; title=&quot;利用 nrm 一键管理 NPM&quot;&gt;&lt;/a&gt;利用 nrm 一键管理
+        
+      
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>test3</title>
-    <link href="https://amazingzcj.github.io/test3.html"/>
-    <id>https://amazingzcj.github.io/test3.html</id>
-    <published>2019-04-17T00:01:24.000Z</published>
-    <updated>2019-04-17T00:03:44.169Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
+      <category term="NPM" scheme="https://amazingzcj.github.io/categories/NPM/"/>
     
     
-      <category term="测试tags" scheme="https://amazingzcj.github.io/tags/%E6%B5%8B%E8%AF%95tags/"/>
+      <category term="NPM" scheme="https://amazingzcj.github.io/tags/NPM/"/>
     
-  </entry>
-  
-  <entry>
-    <title>test2</title>
-    <link href="https://amazingzcj.github.io/test2.html"/>
-    <id>https://amazingzcj.github.io/test2.html</id>
-    <published>2019-04-15T14:43:30.000Z</published>
-    <updated>2019-04-15T14:43:30.848Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://amazingzcj.github.io/test.html"/>
-    <id>https://amazingzcj.github.io/test.html</id>
-    <published>2019-04-14T23:48:45.000Z</published>
-    <updated>2019-04-14T23:48:45.676Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
+      <category term="nrm" scheme="https://amazingzcj.github.io/tags/nrm/"/>
     
   </entry>
   
@@ -107,26 +63,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>typora-vue-theme主题介绍</title>
-    <link href="https://amazingzcj.github.io/test6.html"/>
-    <id>https://amazingzcj.github.io/test6.html</id>
-    <published>2018-09-07T01:25:00.000Z</published>
-    <updated>2019-04-21T00:02:26.547Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="Markdown" scheme="https://amazingzcj.github.io/categories/Markdown/"/>
-    
-    
-      <category term="Typora" scheme="https://amazingzcj.github.io/tags/Typora/"/>
-    
-      <category term="Markdown" scheme="https://amazingzcj.github.io/tags/Markdown/"/>
     
   </entry>
   

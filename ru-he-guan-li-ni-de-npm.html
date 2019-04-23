@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="test4, amazingzcj">
-    <meta name="description" content="test4 | amazingzcj">
+    <meta name="keywords" content="如何管理你的NPM?, javascript,html,css,react,npm,git">
+    <meta name="description" content="利用 nrm 一键管理 NPM
+当使用官方npm源安装各种包比较慢的时候，建议修改npm源地址
+查看 npm 源地址在终端输入以下命令
+npm config list
+//metrics-registry = &amp;quot;https://r">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>test4 | amazingzcj</title>
+    <title>如何管理你的NPM? | amazingzcj</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -21,14 +25,27 @@
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/xonokai.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         
     </style>
+    <!-- Global site tag (gtag.js) - Baidu Analytics -->
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -239,13 +256,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        test4
+                        如何管理你的NPM?
                     </div>
                 </div>
             </div>
@@ -357,12 +374,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip tag-bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/NPM/" target="_blank">
+                                <span class="chip tag-bg-color">NPM</span>
+                            </a>
+                        
+                            <a href="/tags/nrm/" target="_blank">
+                                <span class="chip tag-bg-color">nrm</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/NPM/" class="post-category" target="_blank">
+                                NPM
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -370,14 +404,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-17
+                    2019-04-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        0
+                        208
                     </div>
                     
 
@@ -400,7 +434,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="利用-nrm-一键管理-NPM"><a href="#利用-nrm-一键管理-NPM" class="headerlink" title="利用 nrm 一键管理 NPM"></a>利用 nrm 一键管理 NPM</h2><hr>
+<p>当使用官方npm源安装各种包比较慢的时候，建议修改npm源地址</p>
+<h3 id="查看-npm-源地址"><a href="#查看-npm-源地址" class="headerlink" title="查看 npm 源地址"></a>查看 npm 源地址</h3><p>在终端输入以下命令</p>
+<pre><code>npm config list
+//metrics-registry = &quot;https://registry.npmjs.org/&quot;
+</code></pre><h3 id="切换-npm-地址"><a href="#切换-npm-地址" class="headerlink" title="切换 npm 地址"></a>切换 npm 地址</h3><p>国内常用的镜像地址如淘宝:</p>
+<pre><code>npm set registry https://registry.npm.taobao.org/
+</code></pre><blockquote>
+<p>但是因为发现一直切换来删除去特别麻烦<br>因此就出现了 nrm : NPM registry manager<br>顾名思义: nrm是专门用来管理和快速切换私人配置的 registry 这么一项工具</p>
+</blockquote>
+<h3 id="全局安装-nrm"><a href="#全局安装-nrm" class="headerlink" title="全局安装 nrm"></a>全局安装 nrm</h3><pre><code>npm install nrm -g --save
+</code></pre><h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><pre><code>nrm ls
+</code></pre><!-- ![nrm]( "nrm ls") -->
+<h3 id="查看当前使用的-npm-源"><a href="#查看当前使用的-npm-源" class="headerlink" title="查看当前使用的 npm 源"></a>查看当前使用的 npm 源</h3><pre><code>nrm current
+</code></pre><h3 id="切换-npm-源"><a href="#切换-npm-源" class="headerlink" title="切换 npm 源"></a>切换 npm 源</h3><pre><code>nrm use taobao
+</code></pre><h3 id="测试速度"><a href="#测试速度" class="headerlink" title="测试速度"></a>测试速度</h3><pre><code>nrm test taobao
+// taobao - 165ms
+</code></pre><h3 id="添加私有-npm-源"><a href="#添加私有-npm-源" class="headerlink" title="添加私有 npm 源"></a>添加私有 npm 源</h3><pre><code>nrm add amazingzcj http://amazing.npm
+// amazingzcj -- http://amazing.npm
+</code></pre><h3 id="删除已配置-npm"><a href="#删除已配置-npm" class="headerlink" title="删除已配置 npm"></a>删除已配置 npm</h3><pre><code>nrm del amazingzcj
+</code></pre>
             </div>
             <hr>
 
@@ -423,7 +477,7 @@
                     </span>
                     <a href="https://amazingzcj.github.io" class="b-link-green">amazingzcj</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/test4.html" class="b-link-green">test4</a>
+                    <a href="/ru-he-guan-li-ni-de-npm.html" class="b-link-green">如何管理你的NPM?</a>
                 </p>
             </div>
         </div>
@@ -446,30 +500,52 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/test5.html">
+                <a href="/ru-he-guan-li-ni-de-npm.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="test5">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="如何管理你的NPM?">
                         
-                        <span class="card-title">test5</span>
+                        <span class="card-title">如何管理你的NPM?</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text"></div>
+                    <div class="summary block-with-text">利用 nrm 一键管理 NPM
+当使用官方npm源安装各种包比较慢的时候，建议修改npm源地址
+查看 npm 源地址在终端输入以下命令
+npm config list
+//metrics-registry = &quot;https://r</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            ZCJ
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/NPM/" class="post-category" target="_blank">
+                                    NPM
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/NPM/" target="_blank">
+                        <span class="chip tag-bg-color">NPM</span>
+                    </a>
+                    
+                    <a href="/tags/nrm/" target="_blank">
+                        <span class="chip tag-bg-color">nrm</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -481,20 +557,20 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/test3.html">
+                <a href="/hello-world.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="test3">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">test3</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text"></div>
+                    <div class="summary block-with-text">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-17
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-15
                             </span>
                         <span class="publish-author">
                             
@@ -503,14 +579,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/测试tags/" target="_blank">
-                        <span class="chip tag-bg-color">测试tags</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -670,7 +738,7 @@
                 
                     <!-- &nbsp;<i class="fa fa-area-chart"></i>&nbsp; -->
                     总字数:&nbsp;
-                    <span class="white-color">73</span>&nbsp; | &nbsp;
+                    <span class="white-color">281</span>&nbsp; | &nbsp;
                 
                 
                 <span id="busuanzi_container_site_pv">
