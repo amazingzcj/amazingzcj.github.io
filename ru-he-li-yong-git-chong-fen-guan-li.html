@@ -4,8 +4,17 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, javascript,html,css,react,npm,git">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="如何利用 Git 充分管理?, javascript,html,css,react,npm,git">
+    <meta name="description" content="Git 操作详解
+使用 Git 的时候零星地记得一些语句，不够熟练且易忘，因此做个总结。
+Git 主要操作基础1.提交(commit)
+创建一个新的提交记录
+
+git commit
+
+创建一个新的提交记录,并且附加说明
+
+git commi">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +22,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Hello World | amazingzcj</title>
+    <title>如何利用 Git 充分管理? | amazingzcj</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -252,13 +261,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Hello World
+                        如何利用 Git 充分管理?
                     </div>
                 </div>
             </div>
@@ -370,12 +379,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip tag-bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Git/" target="_blank">
+                                <span class="chip tag-bg-color">Git</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Git/" class="post-category" target="_blank">
+                                Git
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -383,14 +405,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-15
+                    2019-04-24
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        73
+                        359
                     </div>
                     
 
@@ -413,20 +435,48 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h1 id="Git-操作详解"><a href="#Git-操作详解" class="headerlink" title="Git 操作详解"></a>Git 操作详解</h1><hr>
+<p>使用 Git 的时候零星地记得一些语句，不够熟练且易忘，因此做个总结。</p>
+<h2 id="Git-主要操作"><a href="#Git-主要操作" class="headerlink" title="Git 主要操作"></a>Git 主要操作</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h4 id="1-提交-commit"><a href="#1-提交-commit" class="headerlink" title="1.提交(commit)"></a>1.提交(commit)</h4><blockquote>
+<p>创建一个新的提交记录</p>
+</blockquote>
+<pre><code>git commit
+</code></pre><blockquote>
+<p>创建一个新的提交记录,并且附加说明</p>
+</blockquote>
+<pre><code>git commit -m &quot;提交说明&quot;
+//说明建议英文
+</code></pre><h4 id="2-分支-branch"><a href="#2-分支-branch" class="headerlink" title="2.分支(branch)"></a>2.分支(branch)</h4><blockquote>
+<p>创建一个新的分支</p>
+</blockquote>
+<pre><code>git branch &lt;branch-name&gt;
+</code></pre><blockquote>
+<p>切换到某一分支</p>
+</blockquote>
+<pre><code>git checkout &lt;branch-name&gt;
+</code></pre><blockquote>
+<p>创建一个新并切换到这一分支</p>
+</blockquote>
+<pre><code>git checkout -b &lt;branch-name&gt;
+</code></pre><h4 id="3-合并-merge"><a href="#3-合并-merge" class="headerlink" title="3.合并(merge)"></a>3.合并(merge)</h4><blockquote>
+<p>合并分支，要注意当前分支!!!<br>与 rebase 不同，将 A 合并到 B 要先切换到 B 分支，再 merge A</p>
+</blockquote>
+<pre><code>git merge &lt;branch-name&gt;
+</code></pre><blockquote>
+<p>将 A 分支上的 X 文件 合并到 B 上 (类似复制粘贴)</p>
+</blockquote>
+<pre><code>git checkout B
+git checkout A X
+</code></pre><h4 id="4-合并-rebase"><a href="#4-合并-rebase" class="headerlink" title="4.合并(rebase)"></a>4.合并(rebase)</h4><blockquote>
+<p>合并分支,能够线性得展示 git记录, 但原分支将会继续存在，要注意当前分支!!!<br>与 merge 不同，将 A 合并到 B 要先切换到 A 分支，再 rebase B</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript">git checkout <span class="token operator">&lt;</span>branch<span class="token operator">-</span>name<span class="token operator">></span>
 </code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><h4 id="分离HEAD"><a href="#分离HEAD" class="headerlink" title="分离HEAD"></a>分离HEAD</h4><blockquote>
+<p>HEAD是一个指针，通常情况下它可以将它与当前分支等同（其实它是指向当前分支）。<br>.git目录中有一个为HEAD的文件，它记录着HEAD的内容，查询代码如下：</p>
+</blockquote>
+<pre><code>cat .git/HEAD
+</code></pre><h3 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h3><h3 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h3><h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><h2 id="Git-远程操作"><a href="#Git-远程操作" class="headerlink" title="Git 远程操作"></a>Git 远程操作</h2><h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h3 id="远程仓库进阶"><a href="#远程仓库进阶" class="headerlink" title="远程仓库进阶"></a>远程仓库进阶</h3>
             </div>
             <hr>
 
@@ -449,7 +499,7 @@
                     </span>
                     <a href="https://amazingzcj.github.io" class="b-link-green">amazingzcj</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/hello-world.html" class="b-link-green">Hello World</a>
+                    <a href="/ru-he-li-yong-git-chong-fen-guan-li.html" class="b-link-green">如何利用 Git 充分管理?</a>
                 </p>
             </div>
         </div>
@@ -472,7 +522,63 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/ru-he-li-yong-git-chong-fen-guan-li.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="如何利用 Git 充分管理?">
+                        
+                        <span class="card-title">如何利用 Git 充分管理?</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">Git 操作详解
+使用 Git 的时候零星地记得一些语句，不够熟练且易忘，因此做个总结。
+Git 主要操作基础1.提交(commit)
+创建一个新的提交记录
+
+git commit
+
+创建一个新的提交记录,并且附加说明
+
+git commi</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Git/" class="post-category" target="_blank">
+                                    Git
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/" target="_blank">
+                        <span class="chip tag-bg-color">Git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/ru-he-guan-li-ni-de-npm.html">
                     <div class="card-image">
@@ -490,9 +596,9 @@
 npm config list
 //metrics-registry = &quot;https://r</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -517,40 +623,6 @@ npm config list
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
-            </div>
-            <div class="card">
-                <a href="/hello-world.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-15
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            ZCJ
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>

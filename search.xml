@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>如何利用 Git 充分管理?</title>
+      <link href="/ru-he-li-yong-git-chong-fen-guan-li.html"/>
+      <url>/ru-he-li-yong-git-chong-fen-guan-li.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Git-操作详解"><a href="#Git-操作详解" class="headerlink" title="Git 操作详解"></a>Git 操作详解</h1><hr><p>使用 Git 的时候零星地记得一些语句，不够熟练且易忘，因此做个总结。</p><h2 id="Git-主要操作"><a href="#Git-主要操作" class="headerlink" title="Git 主要操作"></a>Git 主要操作</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h4 id="1-提交-commit"><a href="#1-提交-commit" class="headerlink" title="1.提交(commit)"></a>1.提交(commit)</h4><blockquote><p>创建一个新的提交记录</p></blockquote><pre><code>git commit</code></pre><blockquote><p>创建一个新的提交记录,并且附加说明</p></blockquote><pre><code>git commit -m &quot;提交说明&quot;//说明建议英文</code></pre><h4 id="2-分支-branch"><a href="#2-分支-branch" class="headerlink" title="2.分支(branch)"></a>2.分支(branch)</h4><blockquote><p>创建一个新的分支</p></blockquote><pre><code>git branch &lt;branch-name&gt;</code></pre><blockquote><p>切换到某一分支</p></blockquote><pre><code>git checkout &lt;branch-name&gt;</code></pre><blockquote><p>创建一个新并切换到这一分支</p></blockquote><pre><code>git checkout -b &lt;branch-name&gt;</code></pre><h4 id="3-合并-merge"><a href="#3-合并-merge" class="headerlink" title="3.合并(merge)"></a>3.合并(merge)</h4><blockquote><p>合并分支，要注意当前分支!!!<br>与 rebase 不同，将 A 合并到 B 要先切换到 B 分支，再 merge A</p></blockquote><pre><code>git merge &lt;branch-name&gt;</code></pre><blockquote><p>将 A 分支上的 X 文件 合并到 B 上 (类似复制粘贴)</p></blockquote><pre><code>git checkout Bgit checkout A X</code></pre><h4 id="4-合并-rebase"><a href="#4-合并-rebase" class="headerlink" title="4.合并(rebase)"></a>4.合并(rebase)</h4><blockquote><p>合并分支,能够线性得展示 git记录, 但原分支将会继续存在，要注意当前分支!!!<br>与 merge 不同，将 A 合并到 B 要先切换到 A 分支，再 rebase B</p></blockquote><pre class=" language-javascript"><code class="language-javascript">git checkout <span class="token operator">&lt;</span>branch<span class="token operator">-</span>name<span class="token operator">></span></code></pre><h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><h4 id="分离HEAD"><a href="#分离HEAD" class="headerlink" title="分离HEAD"></a>分离HEAD</h4><blockquote><p>HEAD是一个指针，通常情况下它可以将它与当前分支等同（其实它是指向当前分支）。<br>.git目录中有一个为HEAD的文件，它记录着HEAD的内容，查询代码如下：</p></blockquote><pre><code>cat .git/HEAD</code></pre><h3 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h3><h3 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h3><h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><h2 id="Git-远程操作"><a href="#Git-远程操作" class="headerlink" title="Git 远程操作"></a>Git 远程操作</h2><h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h3 id="远程仓库进阶"><a href="#远程仓库进阶" class="headerlink" title="远程仓库进阶"></a>远程仓库进阶</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何管理你的NPM?</title>
       <link href="/ru-he-guan-li-ni-de-npm.html"/>
       <url>/ru-he-guan-li-ni-de-npm.html</url>
