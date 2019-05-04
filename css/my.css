@@ -10,6 +10,9 @@
 .footer-bg-color {
     background-image: linear-gradient(to right, #333333 0%, #333333 100%);
 }
+#navContainer >.brand-logo {
+    margin-top: -5px;
+}
 /* .toc-bg-color{
     background-image: linear-gradient(to right, #1890ff 0%, #1890ff 100%);
 } */

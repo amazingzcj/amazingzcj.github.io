@@ -5,7 +5,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="如何利用 Git 充分管理?, javascript,html,css,react,npm,git">
-    <meta name="description" content="Git 操作详解
+    <meta name="description" content="Git 常用操作详解
 使用 Git 的时候零星地记得一些语句，不够熟练且易忘，因此做个常用总结。
 Git 主要操作基础1.提交(commit)
 创建一个新的提交记录
@@ -14,7 +14,7 @@ git commit
 
 创建一个新的提交记录,并且附加说明
 
-git com">
+git c">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -412,7 +412,7 @@ git com">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        2.5k
+                        2.6k
                     </div>
                     
 
@@ -435,7 +435,7 @@ git com">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Git-操作详解"><a href="#Git-操作详解" class="headerlink" title="Git 操作详解"></a>Git 操作详解</h1><hr>
+                <h1 id="Git-常用操作详解"><a href="#Git-常用操作详解" class="headerlink" title="Git 常用操作详解"></a>Git 常用操作详解</h1><hr>
 <p>使用 Git 的时候零星地记得一些语句，不够熟练且易忘，因此做个常用总结。</p>
 <h2 id="Git-主要操作"><a href="#Git-主要操作" class="headerlink" title="Git 主要操作"></a>Git 主要操作</h2><h3 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h3><h4 id="1-提交-commit"><a href="#1-提交-commit" class="headerlink" title="1.提交(commit)"></a>1.提交(commit)</h4><blockquote>
 <p>创建一个新的提交记录</p>
@@ -591,35 +591,39 @@ git push
 </code></pre><h4 id="远程跟踪分支"><a href="#远程跟踪分支" class="headerlink" title="远程跟踪分支"></a>远程跟踪分支</h4><blockquote>
 <ul>
 <li>pull 操作时, 提交记录会被先下载到 o/master 上，之后再合并到本地的 master 分支。隐含的合并目标由这个关联确定的。</li>
-<li>push 操作时, 我们把工作从 master 推到远程仓库中的 master 分支(同时会更新远程分支 o/master) 。这个推送的目的地也是由这种关联确定的！<br>因为在 clone 时，Git 会自动创建一个跟踪远程仓库中活动分支的本地分支，默认情况下这个本地分支会被命名为 master<br>所有我们通常能看到这个语句:<br><code>local branch &quot;master&quot; set to track remote branch &quot;o/master&quot;</code><br>也可自定义该属性</li>
+<li>push 操作时, 我们把工作从 master 推到远程仓库中的 master 分支(同时会更新远程分支 o/master) 。这个推送的目的地也是由这种关联确定的！<blockquote>
+<p>因为在 clone 时，Git 会自动创建一个跟踪远程仓库中活动分支的本地分支，默认情况下这个本地分支会被命名为 master<br>所有我们通常能看到这个语句:<br><code>local branch &quot;master&quot; set to track remote branch &quot;o/master&quot;</code><br>也可自定义该属性</p>
+</blockquote>
+</li>
 </ul>
 </blockquote>
-<p>1.<code>`</code><br>git checkout -b <newbrach> &lt;o/master&gt;<br>创建一个名为 <newbrach> 的分支，它跟踪远程分支 o/master</newbrach></newbrach></p>
-<pre><code>2.
-</code></pre><p>git branch -u o/master <newbrach></newbrach></p>
-<pre><code>
-#### Git Push 的参数Ⅰ
-&gt;切到本地仓库中的“master”分支，获取所有的提交，再到远程仓库“origin”中找到“master”分支，将远程仓库中没有的提交记录都添加上去
-</code></pre><p>git push <origin> <master></master></origin></p>
-<pre><code>
-#### Git Push 的参数Ⅱ
-&gt;同时为源和目的地指定 &lt;place&gt; 的话，只需要用冒号 : 将二者连起来就
-&gt;同时在本地创建 source 分支，连接到远程 destination 分支，如果不存在，自动创建
-</code></pre><p>git push origin <source>:<destination><br>git push origin <source>~2:<destination></destination></destination></p>
-<pre><code>
-#### Git Fetch 的参数
-&gt;由于变成了从远程下载内容到本地，所以与git push 的参数意义相反
-&gt;destination 代表远程分支
-&gt;source 代表本地分支，如果不存在，自动创建
-</code></pre><p>git fetch origin <destination>:<source></destination></p>
-<pre><code>
-#### &lt;source&gt; 留空
-&gt;Git 有两种关于 &lt;source&gt; 的用法是比较诡异的，即你可以在 git push 或 git fetch 时不指定任何 source，方法就是仅保留冒号和 destination 部分，source 部分留空
-</code></pre><p>git push origin :<destination><br>如果 push 空 <source> 到远程仓库，会删除远程仓库中的分支！<br>git fetch origin :<destination><br>如果 fetch 空 <source> 到本地，会在本地创建一个新分支！</destination></destination></p>
-<pre><code>
-#### Git Pull 参数
-&gt;参数类似于 git push 的参数
-</code></pre><p>git pull origin <destination>:<source><br><code>`</code></destination></p>
+<pre><code>1.git checkout -b &lt;newbrach&gt; &lt;o/master&gt;
+创建一个名为 &lt;newbrach&gt; 的分支，它跟踪远程分支 o/master
+2.git branch -u o/master &lt;newbrach&gt;
+</code></pre><h4 id="Git-Push-的参数Ⅰ"><a href="#Git-Push-的参数Ⅰ" class="headerlink" title="Git Push 的参数Ⅰ"></a>Git Push 的参数Ⅰ</h4><blockquote>
+<p>切到本地仓库中的“master”分支，获取所有的提交，再到远程仓库“origin”中找到“master”分支，将远程仓库中没有的提交记录都添加上去</p>
+<pre><code>git push &lt;origin&gt; &lt;master&gt;
+</code></pre></blockquote>
+<h4 id="Git-Push-的参数Ⅱ"><a href="#Git-Push-的参数Ⅱ" class="headerlink" title="Git Push 的参数Ⅱ"></a>Git Push 的参数Ⅱ</h4><blockquote>
+<p>同时为源和目的地指定分支名的话，只需要用冒号 : 将二者连起来就<br>同时在本地创建 source 分支，连接到远程 destination 分支，如果不存在，自动创建</p>
+<pre><code>git push origin &lt;source&gt;:&lt;destination&gt;
+git push origin &lt;source&gt;~2:&lt;destination&gt;
+</code></pre></blockquote>
+<h4 id="Git-Fetch-的参数"><a href="#Git-Fetch-的参数" class="headerlink" title="Git Fetch 的参数"></a>Git Fetch 的参数</h4><blockquote>
+<p>由于变成了从远程下载内容到本地，所以与git push 的参数意义相反<br>destination 代表远程分支<br>source 代表本地分支，如果不存在，自动创建</p>
+<pre><code>git fetch origin &lt;destination&gt;:&lt;source&gt;
+</code></pre></blockquote>
+<h4 id="source-留空"><a href="#source-留空" class="headerlink" title="source 留空"></a>source 留空</h4><blockquote>
+<p>Git 有两种关于 source 的用法是比较诡异的，即你可以在 git push 或 git fetch 时不指定任何 source，方法就是仅保留冒号和 destination 部分，source 部分留空</p>
+<pre><code>git push origin :&lt;destination&gt;
+如果 push 空 &lt;source&gt; 到远程仓库，会删除远程仓库中的分支！
+git fetch origin :&lt;destination&gt;
+如果 fetch 空 &lt;source&gt; 到本地，会在本地创建一个新分支！
+</code></pre></blockquote>
+<h4 id="Git-Pull-参数"><a href="#Git-Pull-参数" class="headerlink" title="Git Pull 参数"></a>Git Pull 参数</h4><blockquote>
+<p>参数类似于 git push 的参数</p>
+<pre><code>git pull origin &lt;destination&gt;:&lt;source&gt;
+</code></pre></blockquote>
 
             </div>
             <hr>
@@ -650,6 +654,28 @@ git push
     </div>
 
     
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'b2eac29304c6bfcf100e',
+        clientSecret: 'c26d8033442c8b416214f4355d6a6d3160ba01e0',
+        repo: 'amazingzcj.github.io',
+        owner: 'amazingzcj',
+        admin: "amazingzcj",
+        id: '2019-04-24T18-57-02',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
 
     
 
@@ -679,7 +705,7 @@ git push
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">Git 操作详解
+                    <div class="summary block-with-text">Git 常用操作详解
 使用 Git 的时候零星地记得一些语句，不够熟练且易忘，因此做个常用总结。
 Git 主要操作基础1.提交(commit)
 创建一个新的提交记录
@@ -688,7 +714,7 @@ git commit
 
 创建一个新的提交记录,并且附加说明
 
-git com</div>
+git c</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
@@ -925,7 +951,7 @@ npm config list
                 
                     <!-- &nbsp;<i class="fa fa-area-chart"></i>&nbsp; -->
                     总字数:&nbsp;
-                    <span class="white-color">2.8k</span>&nbsp; | &nbsp;
+                    <span class="white-color">2.9k</span>&nbsp; | &nbsp;
                 
                 
                 <span id="busuanzi_container_site_pv">
@@ -1015,5 +1041,5 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":500,"hOffset":200,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
 </html>
