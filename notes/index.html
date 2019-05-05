@@ -4,12 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="如何管理你的NPM?, javascript,html,css,react,npm,git">
-    <meta name="description" content="利用 nrm 一键管理 NPM
-当使用官方npm源安装各种包比较慢的时候，建议修改npm源地址
-查看 npm 源地址在终端输入以下命令
-npm config list
-//metrics-registry = &amp;quot;https://r">
+    <meta name="keywords" content="notes, javascript,html,css,react,npm,git">
+    <meta name="description" content="notes | amazingzcj">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +13,7 @@ npm config list
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>如何管理你的NPM? | amazingzcj</title>
+    <title>notes | amazingzcj</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -256,13 +252,13 @@ npm config list
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        如何管理你的NPM?
+                        notes
                     </div>
                 </div>
             </div>
@@ -374,29 +370,12 @@ npm config list
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/NPM/" target="_blank">
-                                <span class="chip tag-bg-color">NPM</span>
-                            </a>
-                        
-                            <a href="/tags/nrm/" target="_blank">
-                                <span class="chip tag-bg-color">nrm</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip tag-bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/NPM/" class="post-category" target="_blank">
-                                NPM
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -404,14 +383,14 @@ npm config list
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-23
+                    2019-05-05
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        208
+                        2
                     </div>
                     
 
@@ -434,27 +413,7 @@ npm config list
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="利用-nrm-一键管理-NPM"><a href="#利用-nrm-一键管理-NPM" class="headerlink" title="利用 nrm 一键管理 NPM"></a>利用 nrm 一键管理 NPM</h2><hr>
-<p>当使用官方npm源安装各种包比较慢的时候，建议修改npm源地址</p>
-<h3 id="查看-npm-源地址"><a href="#查看-npm-源地址" class="headerlink" title="查看 npm 源地址"></a>查看 npm 源地址</h3><p>在终端输入以下命令</p>
-<pre><code>npm config list
-//metrics-registry = &quot;https://registry.npmjs.org/&quot;
-</code></pre><h3 id="切换-npm-地址"><a href="#切换-npm-地址" class="headerlink" title="切换 npm 地址"></a>切换 npm 地址</h3><p>国内常用的镜像地址如淘宝:</p>
-<pre><code>npm set registry https://registry.npm.taobao.org/
-</code></pre><blockquote>
-<p>但是因为发现一直切换来删除去特别麻烦<br>因此就出现了 nrm : NPM registry manager<br>顾名思义: nrm是专门用来管理和快速切换私人配置的 registry 这么一项工具</p>
-</blockquote>
-<h3 id="全局安装-nrm"><a href="#全局安装-nrm" class="headerlink" title="全局安装 nrm"></a>全局安装 nrm</h3><pre><code>npm install nrm -g --save
-</code></pre><h3 id="查看配置"><a href="#查看配置" class="headerlink" title="查看配置"></a>查看配置</h3><pre><code>nrm ls
-</code></pre><p><img src="https://github.com/amazingzcj/amazingzcj.github.io/blob/master/medias/contentimages/nrm/nrm.png" alt="nrm" title="nrm ls"></p>
-<h3 id="查看当前使用的-npm-源"><a href="#查看当前使用的-npm-源" class="headerlink" title="查看当前使用的 npm 源"></a>查看当前使用的 npm 源</h3><pre><code>nrm current
-</code></pre><h3 id="切换-npm-源"><a href="#切换-npm-源" class="headerlink" title="切换 npm 源"></a>切换 npm 源</h3><pre><code>nrm use taobao
-</code></pre><h3 id="测试速度"><a href="#测试速度" class="headerlink" title="测试速度"></a>测试速度</h3><pre><code>nrm test taobao
-// taobao - 165ms
-</code></pre><h3 id="添加私有-npm-源"><a href="#添加私有-npm-源" class="headerlink" title="添加私有 npm 源"></a>添加私有 npm 源</h3><pre><code>nrm add amazingzcj http://amazing.npm
-// amazingzcj -- http://amazing.npm
-</code></pre><h3 id="删除已配置-npm"><a href="#删除已配置-npm" class="headerlink" title="删除已配置 npm"></a>删除已配置 npm</h3><pre><code>nrm del amazingzcj
-</code></pre>
+                <h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2>
             </div>
             <hr>
 
@@ -477,7 +436,7 @@ npm config list
                     </span>
                     <a href="https://amazingzcj.github.io" class="b-link-green">amazingzcj</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/ru-he-guan-li-ni-de-npm.html" class="b-link-green">如何管理你的NPM?</a>
+                    <a href="/notes/index.html" class="b-link-green">notes</a>
                 </p>
             </div>
         </div>
@@ -499,7 +458,7 @@ npm config list
         repo: 'amazingzcj.github.io',
         owner: 'amazingzcj',
         admin: "amazingzcj",
-        id: '2019-04-23T20-37-47',
+        id: '2019-05-05T20-52-09',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -522,76 +481,23 @@ npm config list
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/ru-he-li-yong-git-chong-fen-guan-li.html">
+                <a href="/notes/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="如何利用 Git 充分管理?">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="notes">
                         
-                        <span class="card-title">如何利用 Git 充分管理?</span>
+                        <span class="card-title">notes</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">Git 常用操作详解
-使用 Git 的时候零星地记得一些语句，不够熟练且易忘，因此做个常用总结。
-Git 主要操作基础1.提交(commit)
-创建一个新的提交记录
-
-git commit
-
-创建一个新的提交记录,并且附加说明
-
-git c</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Git/" class="post-category" target="_blank">
-                                    Git
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Git/" target="_blank">
-                        <span class="chip tag-bg-color">Git</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/hello-world.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex</div>
+                    <div class="summary block-with-text">笔记</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-05
                             </span>
                         <span class="publish-author">
                             
@@ -601,6 +507,41 @@ git c</div>
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+            </div>
+            <div class="card">
+                <a href="/notes/index.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="notes">
+                        
+                        <span class="card-title">notes</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">笔记</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            ZCJ
+                            
+                        </span>
+                    </div>
+                </div>
+
                 
             </div>
         </div>

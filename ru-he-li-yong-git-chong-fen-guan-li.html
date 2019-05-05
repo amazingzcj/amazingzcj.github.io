@@ -419,7 +419,7 @@ git c">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        10 分
                     </div>
                     
                 
@@ -471,7 +471,7 @@ git checkout A X
 <p>合并分支,能够线性得展示 git记录, 但原分支将会继续存在，要注意当前分支!!!<br>与 merge 不同，将 A 合并到 B 要先切换到 A 分支，再 rebase B</p>
 </blockquote>
 <pre><code>git rebase &lt;branch-name&gt;
-</code></pre><h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><h4 id="分离HEAD"><a href="#分离HEAD" class="headerlink" title="分离HEAD"></a>分离HEAD</h4><blockquote>
+</code></pre><h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><h4 id="1-分离HEAD"><a href="#1-分离HEAD" class="headerlink" title="1.分离HEAD"></a>1.分离HEAD</h4><blockquote>
 <p>HEAD是一个指针，通常情况下它可以将它与当前分支等同（其实它是指向当前分支）。<br>.git 目录中有一个为 HEAD 的文件，它记录着 HEAD 的内容，查询代码如下：</p>
 </blockquote>
 <pre><code>cat .git/HEAD
@@ -481,18 +481,18 @@ git checkout A X
 </blockquote>
 <pre><code>cat .git/refs/heads/backup
 //一段长度为40的sha-1字符串值
-</code></pre><h4 id="相对引用"><a href="#相对引用" class="headerlink" title="相对引用(^)"></a>相对引用(^)</h4><blockquote>
+</code></pre><h4 id="2-相对引用"><a href="#2-相对引用" class="headerlink" title="2.相对引用(^)"></a>2.相对引用(^)</h4><blockquote>
 <p>通过指定提交记录哈希值的方式在 Git 中移动不太方便，所以有了相对引用</p>
 </blockquote>
 <pre><code>git checkout master^    //向上移动 1 个提交记录
 git checkout HEAD^      //将 HEAD 指针向上移动 1 个提交记录
-</code></pre><h4 id="相对引用-1"><a href="#相对引用-1" class="headerlink" title="相对引用(~)"></a>相对引用(~)</h4><blockquote>
+</code></pre><h4 id="3-相对引用"><a href="#3-相对引用" class="headerlink" title="3.相对引用(~)"></a>3.相对引用(~)</h4><blockquote>
 <p>如果你想在提交树中向上移动很多步的话，敲那么多 ^ 貌似也挺烦人的</p>
 </blockquote>
 <pre><code>git checkout master~          //一次向上移动 1 个提交记录
 git checkout master~3         //一次向上移动 3 个提交记录
 git branch -f master HEAD~3   //-f 容许我们将 master 分支强制移动到那个位置
-</code></pre><h4 id="撤销变更"><a href="#撤销变更" class="headerlink" title="撤销变更"></a>撤销变更</h4><blockquote>
+</code></pre><h4 id="4-撤销变更"><a href="#4-撤销变更" class="headerlink" title="4.撤销变更"></a>4.撤销变更</h4><blockquote>
 <p>在 Git 里撤销变更的方法很多。和提交一样，撤销变更由底层部分（暂存区的独立文件或者片段）和上层部分（变更到底是通过哪种方式被撤销的）组成<br>git reset 通过把分支记录回退几个提交记录来实现撤销改动，原来指向的提交记录就跟从来没有提交过一样</p>
 </blockquote>
 <pre><code>git reset HEAD~1  //回退一次
@@ -500,36 +500,36 @@ git branch -f master HEAD~3   //-f 容许我们将 master 分支强制移动到�
 <p>为了撤销更改并分享给别人<br>git revert 将会创建新提交，新提交的状态和内容与之前的某一版本一致，便于分享</p>
 </blockquote>
 <pre><code>git revert HEAD
-</code></pre><h3 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h3><h4 id="Git-Cherry-pick"><a href="#Git-Cherry-pick" class="headerlink" title="Git Cherry-pick"></a>Git Cherry-pick</h4><blockquote>
+</code></pre><h3 id="移动提交记录"><a href="#移动提交记录" class="headerlink" title="移动提交记录"></a>移动提交记录</h3><h4 id="1-Git-Cherry-pick"><a href="#1-Git-Cherry-pick" class="headerlink" title="1.Git Cherry-pick"></a>1.Git Cherry-pick</h4><blockquote>
 <p>如果你想将一些提交复制到当前所在的位置 HEAD 下面的话， Cherry-pick 是最直接的方式了。</p>
 </blockquote>
 <pre><code>git cherry-pick &lt;提交名称1&gt; &lt;提交名称2&gt;...
-</code></pre><h4 id="交互式-rebase"><a href="#交互式-rebase" class="headerlink" title="交互式 rebase"></a>交互式 rebase</h4><blockquote>
+</code></pre><h4 id="2-交互式-rebase"><a href="#2-交互式-rebase" class="headerlink" title="2.交互式 rebase"></a>2.交互式 rebase</h4><blockquote>
 <p>交互式 rebase 指的是使用带参数 –interactive 的 rebase 命令, 简写为 -i<br>如果你在命令后增加了这个选项, Git 会打开一个 UI 界面并列出将要被复制到目标分支的备选提交记录，<br>它还会显示每个提交记录的哈希值和提交说明，提交说明有助于你理解这个提交进行了哪些更改。</p>
 </blockquote>
 <pre><code>git rebase -i HEAD~3
 //从当前分支算起，向前 3 次，共可对 3 个提交进行排序，也可忽略其中某些提交
-</code></pre><h3 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h3><h4 id="只取一个提交记录"><a href="#只取一个提交记录" class="headerlink" title="只取一个提交记录"></a>只取一个提交记录</h4><blockquote>
+</code></pre><h3 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h3><h4 id="1-只取一个提交记录"><a href="#1-只取一个提交记录" class="headerlink" title="1.只取一个提交记录"></a>1.只取一个提交记录</h4><blockquote>
 <p>可以选择通过 fast-forward 快速合并,但会包含不必要的信息<br>通常可以直接 cherry-pick 复制那一个记录</p>
 </blockquote>
-<h4 id="提交的技巧-一"><a href="#提交的技巧-一" class="headerlink" title="提交的技巧(一)"></a>提交的技巧(一)</h4><blockquote>
+<h4 id="2-提交的技巧-一"><a href="#2-提交的技巧-一" class="headerlink" title="2.提交的技巧(一)"></a>2.提交的技巧(一)</h4><blockquote>
 <p>先用 git rebase -i 将提交重新排序，然后把我们想要修改的提交记录挪到最前<br>然后用 commit –amend 来进行一些小修改<br>接着再用 git rebase -i 来将他们调回原来的顺序<br>最后我们把 master 移到修改的最前端，就大功告成啦！</p>
 </blockquote>
 <pre><code>git rebase -i
 git commit --amend
 git rebase -i
 git rebase &lt;branch-name&gt;
-</code></pre><h4 id="提交的技巧-二"><a href="#提交的技巧-二" class="headerlink" title="提交的技巧(二)"></a>提交的技巧(二)</h4><blockquote>
+</code></pre><h4 id="3-提交的技巧-二"><a href="#3-提交的技巧-二" class="headerlink" title="3.提交的技巧(二)"></a>3.提交的技巧(二)</h4><blockquote>
 <p>我们可以使用 rebase -i 对提交记录进行重新排序。只要把我们想要的提交记录挪到最前端，我们就可以很轻松的用 –amend 修改它，然后把它们重新排成我们想要的顺序<br>但这样做就唯一的问题就是要进行两次排序，而这有可能造成由 rebase 而导致的冲突</p>
 </blockquote>
 <pre><code>git cherry-pick &lt;branch-name&gt;
 git rebase -i HEAD  //回退到你需要的提交历史
 git cherry-pick &lt;branch-name&gt;
-</code></pre><h4 id="Git-Tag"><a href="#Git-Tag" class="headerlink" title="Git Tag"></a>Git Tag</h4><blockquote>
+</code></pre><h4 id="4-Git-Tag"><a href="#4-Git-Tag" class="headerlink" title="4.Git Tag"></a>4.Git Tag</h4><blockquote>
 <p>它们可以（在某种程度上 —— 因为标签可以被删除后重新在另外一个位置创建同名的标签）永久地将某个特定的提交命名为里程碑，然后就可以像分支一样引用了<br>它们并不会随着新的提交而移动。你也不能检出到某个标签上面进行修改提交，它就像是提交树上的一个锚点，标识了某个特定的位置</p>
 </blockquote>
 <pre><code>git tag &lt;tag-name&gt; &lt;branch-name&gt;
-</code></pre><h4 id="Git-Describe"><a href="#Git-Describe" class="headerlink" title="Git Describe"></a>Git Describe</h4><blockquote>
+</code></pre><h4 id="5-Git-Describe"><a href="#5-Git-Describe" class="headerlink" title="5.Git Describe"></a>5.Git Describe</h4><blockquote>
 <p>Git Describe 能帮你在提交历史中移动了多次以后找到方向；当你用 git bisect（一个查找产生 Bug 的提交记录的指令）找到某个提交记录时，或者是有些遗忘了， 可能会用到这个命令。</p>
 </blockquote>
 <pre><code>git describe &lt;ref&gt;
@@ -540,10 +540,10 @@ tag 表示的是离 ref 最近的标签，
 numCommits 是表示这个 ref 与 tag 相差有多少个提交记录， 
 hash 表示的是你所给定的 ref 所表示的提交记录哈希值的前几位
 当 ref 提交记录上有某个标签时，则只输出标签名称 
-</code></pre><h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><h4 id="多分支-rebase"><a href="#多分支-rebase" class="headerlink" title="多分支 rebase"></a>多分支 rebase</h4><blockquote>
+</code></pre><h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><h4 id="1-多分支-rebase"><a href="#1-多分支-rebase" class="headerlink" title="1.多分支 rebase"></a>1.多分支 rebase</h4><blockquote>
 <p>可以选择多次 git rebase -i 拉取到一条提交线上，最后合并 master ,但是过于繁琐<br>建议直接 git cherry-pick </p>
 </blockquote>
-<h4 id="选择父提交记录"><a href="#选择父提交记录" class="headerlink" title="选择父提交记录"></a>选择父提交记录</h4><blockquote>
+<h4 id="2-选择父提交记录"><a href="#2-选择父提交记录" class="headerlink" title="2.选择父提交记录"></a>2.选择父提交记录</h4><blockquote>
 <p>操作符 ^ 后面也可以跟一个数字。<br>但是该操作符后面的数字与 ~ 后面的不同，并不是用来指定向上返回几代，而是指定合并提交记录的某个父提交。<br>Git 默认选择合并提交的“第一个”父提交，在操作符 ^ 后跟一个数字可以改变这一默认行为。</p>
 </blockquote>
 <pre><code>git checkout HEAD^ 等价于 git checkout HEAD~
@@ -552,28 +552,28 @@ git checkout HEAD^2
 <p>支持链式操作</p>
 <pre><code>git checkout HEAD~^2~2
 </code></pre></blockquote>
-<h2 id="Git-远程操作"><a href="#Git-远程操作" class="headerlink" title="Git 远程操作"></a>Git 远程操作</h2><h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="Git-Clone"><a href="#Git-Clone" class="headerlink" title="Git Clone"></a>Git Clone</h4><pre><code>git clone &lt;http-name&gt;
-</code></pre><h4 id="远程分支"><a href="#远程分支" class="headerlink" title="远程分支"></a>远程分支</h4><blockquote>
+<h2 id="Git-远程操作"><a href="#Git-远程操作" class="headerlink" title="Git 远程操作"></a>Git 远程操作</h2><h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><h4 id="1-Git-Clone"><a href="#1-Git-Clone" class="headerlink" title="1.Git Clone"></a>1.Git Clone</h4><pre><code>git clone &lt;http-name&gt;
+</code></pre><h4 id="2-远程分支"><a href="#2-远程分支" class="headerlink" title="2.远程分支"></a>2.远程分支</h4><blockquote>
 <p>远程分支反映了远程仓库(在你上次和它通信时)的状态<br>远程分支有一个特别的属性，在你检出时自动进入分离 HEAD 状态</p>
 </blockquote>
-<h4 id="Git-Fetch"><a href="#Git-Fetch" class="headerlink" title="Git Fetch"></a>Git Fetch</h4><blockquote>
+<h4 id="3-Git-Fetch"><a href="#3-Git-Fetch" class="headerlink" title="3.Git Fetch"></a>3.Git Fetch</h4><blockquote>
 <p>从远程仓库下载本地仓库中缺失的提交记录<br>更新远程分支指针<br>理解为单纯的下载操作，不会改变本地仓库的状态</p>
 </blockquote>
 <pre><code>git fetch
-</code></pre><h4 id="Git-Pull"><a href="#Git-Pull" class="headerlink" title="Git Pull"></a>Git Pull</h4><blockquote>
+</code></pre><h4 id="4-Git-Pull"><a href="#4-Git-Pull" class="headerlink" title="4.Git Pull"></a>4.Git Pull</h4><blockquote>
 <p>抓取更新再合并到本地分支<br>等价于 git fetch 和 git merge 的结合</p>
 </blockquote>
 <pre><code>git pull
-</code></pre><h4 id="Git-Push"><a href="#Git-Push" class="headerlink" title="Git Push"></a>Git Push</h4><blockquote>
+</code></pre><h4 id="5-Git-Push"><a href="#5-Git-Push" class="headerlink" title="5.Git Push"></a>5.Git Push</h4><blockquote>
 <p>将你的变更上传到指定的远程仓库，并在远程仓库上合并你的新提交记录</p>
 </blockquote>
 <pre><code>git push
-</code></pre><h4 id="偏离的工作"><a href="#偏离的工作" class="headerlink" title="偏离的工作"></a>偏离的工作</h4><blockquote>
+</code></pre><h4 id="6-偏离的工作"><a href="#6-偏离的工作" class="headerlink" title="6.偏离的工作"></a>6.偏离的工作</h4><blockquote>
 <p>当远程仓库与本地仓库的提交历史不一致，git push 不允许有变更<br>可以先 git fetch 然后 git rebase/git merge 合并，再 git push</p>
 </blockquote>
 <pre><code>git pull --rebase
 git push
-</code></pre><h3 id="远程仓库进阶"><a href="#远程仓库进阶" class="headerlink" title="远程仓库进阶"></a>远程仓库进阶</h3><h4 id="利用-rebase-推送主分支"><a href="#利用-rebase-推送主分支" class="headerlink" title="利用 rebase 推送主分支"></a>利用 rebase 推送主分支</h4><blockquote>
+</code></pre><h3 id="远程仓库进阶"><a href="#远程仓库进阶" class="headerlink" title="远程仓库进阶"></a>远程仓库进阶</h3><h4 id="1-利用-rebase-推送主分支"><a href="#1-利用-rebase-推送主分支" class="headerlink" title="1.利用 rebase 推送主分支"></a>1.利用 rebase 推送主分支</h4><blockquote>
 <ul>
 <li>将特性分支集成到 master 上</li>
 <li>推送并更新远程分支</li>
@@ -582,13 +582,13 @@ git push
 <pre><code>git pull --rebase
 git rebase...     //在 master 分支下合并
 git push
-</code></pre><h4 id="利用-merge-推送主分支"><a href="#利用-merge-推送主分支" class="headerlink" title="利用 merge 推送主分支"></a>利用 merge 推送主分支</h4><blockquote>
+</code></pre><h4 id="2-利用-merge-推送主分支"><a href="#2-利用-merge-推送主分支" class="headerlink" title="2.利用 merge 推送主分支"></a>2.利用 merge 推送主分支</h4><blockquote>
 <p>效果与 rebase 相同<br>但可保留提交历史</p>
 </blockquote>
 <pre><code>git pull --rebase
 git merge ...     //在 master 分支下合并
 git push
-</code></pre><h4 id="远程跟踪分支"><a href="#远程跟踪分支" class="headerlink" title="远程跟踪分支"></a>远程跟踪分支</h4><blockquote>
+</code></pre><h4 id="3-远程跟踪分支"><a href="#3-远程跟踪分支" class="headerlink" title="3.远程跟踪分支"></a>3.远程跟踪分支</h4><blockquote>
 <ul>
 <li>pull 操作时, 提交记录会被先下载到 o/master 上，之后再合并到本地的 master 分支。隐含的合并目标由这个关联确定的。</li>
 <li>push 操作时, 我们把工作从 master 推到远程仓库中的 master 分支(同时会更新远程分支 o/master) 。这个推送的目的地也是由这种关联确定的！<blockquote>
@@ -600,31 +600,31 @@ git push
 <pre><code>1.git checkout -b &lt;newbrach&gt; &lt;o/master&gt;
 创建一个名为 &lt;newbrach&gt; 的分支，它跟踪远程分支 o/master
 2.git branch -u o/master &lt;newbrach&gt;
-</code></pre><h4 id="Git-Push-的参数Ⅰ"><a href="#Git-Push-的参数Ⅰ" class="headerlink" title="Git Push 的参数Ⅰ"></a>Git Push 的参数Ⅰ</h4><blockquote>
+</code></pre><h4 id="4-Git-Push-的参数Ⅰ"><a href="#4-Git-Push-的参数Ⅰ" class="headerlink" title="4.Git Push 的参数Ⅰ"></a>4.Git Push 的参数Ⅰ</h4><blockquote>
 <p>切到本地仓库中的“master”分支，获取所有的提交，再到远程仓库“origin”中找到“master”分支，将远程仓库中没有的提交记录都添加上去</p>
+</blockquote>
 <pre><code>git push &lt;origin&gt; &lt;master&gt;
-</code></pre></blockquote>
-<h4 id="Git-Push-的参数Ⅱ"><a href="#Git-Push-的参数Ⅱ" class="headerlink" title="Git Push 的参数Ⅱ"></a>Git Push 的参数Ⅱ</h4><blockquote>
+</code></pre><h4 id="5-Git-Push-的参数Ⅱ"><a href="#5-Git-Push-的参数Ⅱ" class="headerlink" title="5.Git Push 的参数Ⅱ"></a>5.Git Push 的参数Ⅱ</h4><blockquote>
 <p>同时为源和目的地指定分支名的话，只需要用冒号 : 将二者连起来就<br>同时在本地创建 source 分支，连接到远程 destination 分支，如果不存在，自动创建</p>
+</blockquote>
 <pre><code>git push origin &lt;source&gt;:&lt;destination&gt;
 git push origin &lt;source&gt;~2:&lt;destination&gt;
-</code></pre></blockquote>
-<h4 id="Git-Fetch-的参数"><a href="#Git-Fetch-的参数" class="headerlink" title="Git Fetch 的参数"></a>Git Fetch 的参数</h4><blockquote>
+</code></pre><h4 id="6-Git-Fetch-的参数"><a href="#6-Git-Fetch-的参数" class="headerlink" title="6.Git Fetch 的参数"></a>6.Git Fetch 的参数</h4><blockquote>
 <p>由于变成了从远程下载内容到本地，所以与git push 的参数意义相反<br>destination 代表远程分支<br>source 代表本地分支，如果不存在，自动创建</p>
+</blockquote>
 <pre><code>git fetch origin &lt;destination&gt;:&lt;source&gt;
-</code></pre></blockquote>
-<h4 id="source-留空"><a href="#source-留空" class="headerlink" title="source 留空"></a>source 留空</h4><blockquote>
+</code></pre><h4 id="7-source-留空"><a href="#7-source-留空" class="headerlink" title="7.source 留空"></a>7.source 留空</h4><blockquote>
 <p>Git 有两种关于 source 的用法是比较诡异的，即你可以在 git push 或 git fetch 时不指定任何 source，方法就是仅保留冒号和 destination 部分，source 部分留空</p>
+</blockquote>
 <pre><code>git push origin :&lt;destination&gt;
 如果 push 空 &lt;source&gt; 到远程仓库，会删除远程仓库中的分支！
 git fetch origin :&lt;destination&gt;
 如果 fetch 空 &lt;source&gt; 到本地，会在本地创建一个新分支！
-</code></pre></blockquote>
-<h4 id="Git-Pull-参数"><a href="#Git-Pull-参数" class="headerlink" title="Git Pull 参数"></a>Git Pull 参数</h4><blockquote>
+</code></pre><h4 id="8-Git-Pull-参数"><a href="#8-Git-Pull-参数" class="headerlink" title="8.Git Pull 参数"></a>8.Git Pull 参数</h4><blockquote>
 <p>参数类似于 git push 的参数</p>
+</blockquote>
 <pre><code>git pull origin &lt;destination&gt;:&lt;source&gt;
-</code></pre></blockquote>
-
+</code></pre>
             </div>
             <hr>
 
@@ -1041,5 +1041,5 @@ $(function () {
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":500,"hOffset":200,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
