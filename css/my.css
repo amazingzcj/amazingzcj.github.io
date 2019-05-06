@@ -13,8 +13,8 @@
 #navContainer >.brand-logo {
     margin-top: -5px;
 }
-#busuanzi_container_site_uv,
-#busuanzi_container_site_pv{
+#busuanzi_container_site_pv,
+#busuanzi_container_site_uv {
     display: block!important;
 }
 /* .toc-bg-color{
