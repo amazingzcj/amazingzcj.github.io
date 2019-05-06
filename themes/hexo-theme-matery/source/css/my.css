@@ -1,0 +1,22 @@
+/* Here is your custom css styles. */
+
+.content {
+    margin-top: 42px;
+}
+.article-tags >a >.chip,
+.tag-bg-color {
+    background-image: linear-gradient(to right, #1890ff 0%, #1890ff 100%);
+}
+.footer-bg-color {
+    background-image: linear-gradient(to right, #333333 0%, #333333 100%);
+}
+#navContainer >.brand-logo {
+    margin-top: -5px;
+}
+#busuanzi_container_site_pv,
+#busuanzi_container_site_uv {
+    display: block!important;
+}
+/* .toc-bg-color{
+    background-image: linear-gradient(to right, #1890ff 0%, #1890ff 100%);
+} */
